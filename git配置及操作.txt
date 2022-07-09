@@ -1,0 +1,35 @@
+Jenkins配置：
+
+
+
+
+
+
+
+
+
+一、Git配置
+1.注册Git账号
+https://github.com，注册完成之后在里面创建一个项目工程creat a new respository：会生成一个仓库地址，以备后用
+2.下载客户端去配置sshkey ：切换到用户的目录下去执行cd ~：
+3.生成公钥私钥key：在git或者cmd命令行输入 : ssh-keygen -t rsa -C “邮箱地址”          --------会生成一个文件在.ssh里面
+4.进入对应目录：cd ~/.ssh（用户目录下的.ssh文件夹）
+5.在git或者cmd命令行查看在公钥文件：cat id_rsa.pub
+6.复制id_rsa.pub的公钥内容到github网站上:右上角自己的头像，setting，SHS and GPG keys里面，把公钥粘贴到key 里面去
+7.测试ssh链接GitHub：cmd或者git命令行输入：ssh -T git@github.com
+8.配置邮箱和用户名
+git config --global user.email "1074148579@qq.com"
+git config --global user.name “xiaobo”
+
+二、Git常用命令操作
+查看当前路径：pwd
+0.先创建一个克隆的文件夹，例如：d:/git_code_clone,在当前文件夹下打开git bash here
+1.克隆 ：在刚打开的git命令行输入：git clone 远程仓库地址（是github网页SSH里面的地址），命令执行完会生成一个仓库的名称interface_auto_test
+2.把代码复制到interface_auto_test这里面
+3.查看未被追踪的文件：git status（此处需要先进入主仓库：cd  interface_auto_test）
+4.追踪文件，把文件存放到暂存区：git add *
+5.提交文件：git commit -m “注释”（此时代码还没有上传到github服务器中）
+6.推送到远程：git push（此时代码就会到仓库里面）
+7.后续有新代码，直接把代码复制到仓库interface_auto_test，然后继续23456
+删除：
+git rm 文件
